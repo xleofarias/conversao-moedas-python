@@ -1,4 +1,5 @@
 import locale
+from decimal import Decimal
 
 def menu():
     print("número", "código_moeda", "tipo_moeda", sep="     ")
@@ -34,7 +35,7 @@ def escolha_moeda(dolar_hoje, iene_hoje, euro_hoje):
 
 def valor_convertido(moeda_escolhida):
     valor_em_real = float(input("Quantos reais você deseja converte? "))
-    converte_moeda_em_real = moeda_escolhida * valor_em_real
+    converte_moeda_em_real = Decimal(moeda_escolhida * valor_em_real)
     valor_formatado = locale.currency(converte_moeda_em_real, grouping= True)
     print(valor_formatado)
 
